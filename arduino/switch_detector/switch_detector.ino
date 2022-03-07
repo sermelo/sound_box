@@ -3,6 +3,7 @@
 
 const char *buttons_files[] = {"white.wav", "blue.wav", "yellow.wav", "green.wav", "red.wav"};
 const int buttonPins[] = {2, 3, 4, 5, 6};
+const int ledPins[] = {18, 17, 16, 15 ,14};
 const int max_buttons = sizeof(buttonPins) / sizeof(buttonPins[0]);
 
 int lastButtonState[max_buttons];
@@ -10,6 +11,7 @@ int lastButtonState[max_buttons];
 void setup() {
   for (byte i = 0; i < max_buttons; i = i + 1) {
       pinMode(buttonPins[i], INPUT);
+      pinMode(ledPins[i], OUTPUT);
       lastButtonState[i] = 0;
   }
   
@@ -33,7 +35,10 @@ void loop() {
       } else {
         Serial.println("OFF");
       }
+      digitalWrite(ledPins[i], buttonState);
+      //analogWrite(, 255*buttonState);
       lastButtonState[i] = buttonState;
+      
     }
   }
   delay(50);
