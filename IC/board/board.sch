@@ -457,25 +457,24 @@ Connection ~ 4850 6250
 Wire Wire Line
 	4550 1850 4950 1850
 $Comp
-L Device:CP C_POW1
+L Device:CP InCap2
 U 1 1 623A7132
 P 4400 1850
-F 0 "C_POW1" V 4145 1850 50  0000 C CNN
-F 1 "10uF" V 4236 1850 50  0000 C CNN
-F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 4438 1700 50  0001 C CNN
+F 0 "InCap2" V 4145 1850 50  0000 C CNN
+F 1 "0.1uF" V 4236 1850 50  0000 C CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 4438 1700 50  0001 C CNN
 F 3 "~" H 4400 1850 50  0001 C CNN
 	1    4400 1850
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	4250 1450 3350 1450
+	4250 1450 3750 1450
 Connection ~ 4250 1450
 Wire Wire Line
 	4250 1850 4250 1450
 Wire Wire Line
 	4950 1850 4950 1150
 Connection ~ 4950 1850
-Connection ~ 3350 1450
 Wire Wire Line
 	4650 1450 4250 1450
 Wire Wire Line
@@ -514,7 +513,7 @@ F 3 "~" H 5600 4250 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4850 6250 3350 6250
+	4850 6250 3750 6250
 Wire Wire Line
 	4850 5450 4850 6250
 Wire Wire Line
@@ -589,7 +588,7 @@ Wire Wire Line
 Wire Wire Line
 	2100 1950 5600 1950
 Wire Wire Line
-	3350 1450 3350 6250
+	3750 1450 3750 6250
 Wire Wire Line
 	1600 1450 1600 2750
 Wire Wire Line
@@ -628,20 +627,7 @@ Connection ~ 2800 1450
 Wire Wire Line
 	2800 1450 1600 1450
 Wire Wire Line
-	2800 1450 3350 1450
-Wire Wire Line
-	3300 1150 3100 1150
-$Comp
-L Switch:SW_DPST_x2 PowerSwExt1
-U 1 1 62AC8AE8
-P 3500 1150
-F 0 "PowerSwExt1" H 3500 1385 50  0000 C CNN
-F 1 "SW_DPST_x2" H 3500 1294 50  0000 C CNN
-F 2 "Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical" H 3500 1150 50  0001 C CNN
-F 3 "~" H 3500 1150 50  0001 C CNN
-	1    3500 1150
-	1    0    0    -1  
-$EndComp
+	2800 1450 3200 1450
 Wire Wire Line
 	6400 2650 5750 2650
 Wire Wire Line
@@ -669,6 +655,37 @@ F 3 "~" H 6600 2250 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7600 700  7600 2550
+$Comp
+L Device:CP InCap1
+U 1 1 6233B054
+P 3200 1300
+F 0 "InCap1" H 3318 1346 50  0000 L CNN
+F 1 "0.33uF" H 3318 1255 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 3238 1150 50  0001 C CNN
+F 3 "~" H 3200 1300 50  0001 C CNN
+	1    3200 1300
+	1    0    0    -1  
+$EndComp
+Connection ~ 3200 1150
 Wire Wire Line
-	3700 1150 4350 1150
+	3200 1150 3100 1150
+Connection ~ 3200 1450
+Connection ~ 3750 1450
+Wire Wire Line
+	3200 1450 3750 1450
+$Comp
+L Device:Rotary_Encoder_Switch SW6
+U 1 1 62300B3A
+P 3850 850
+F 0 "SW6" V 3804 1080 50  0000 L CNN
+F 1 "Rotary_Encoder_Switch" V 3895 1080 50  0000 L CNN
+F 2 "Connector_JST:JST_EH_B5B-EH-A_1x05_P2.50mm_Vertical" H 3700 1010 50  0001 C CNN
+F 3 "~" H 3850 1110 50  0001 C CNN
+	1    3850 850 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3950 1150 4350 1150
+Wire Wire Line
+	3200 1150 3750 1150
 $EndSCHEMATC
